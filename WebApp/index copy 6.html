@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("img").click(function () {
+                $("#div1").fadeIn(300);
+                $("#div2").fadeIn(600);
+                $("#div3").fadeIn(900);
+                $("#div4").fadeIn(1200);
+                $("#iconImage").fadeIn(1500);
+            });
+        });
+    </script>
+
+    <title>Terrasboot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: rgba(255, 255, 255, 0.137);
+            background-image: url('Images/blueBackGround_6.jpg');
+
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100vw 100vh;
+        }
+
+        header {
+            background-color: rgba(0, 97, 243, 0.568);
+            font-family: "Comic Sans MS", cursive, sans-serif;
+
+            padding-left: 1vh;
+            color: white;
+            height: 10vh;
+
+        }
+
+        nav {
+            float: left;
+            width: 6.5vw;
+            height: 90vh;
+            background: rgba(0, 154, 243, 0.589);
+            padding: 0px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: left;
+            padding: 0px;
+            width: 90%;
+            background-color: #ffffff00;
+            height: 82vh;
+        }
+
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: rgba(0, 97, 243, 0.466);
+
+            padding: 0vh;
+            text-align: center;
+            color: white;
+            height: 0vh;
+            font-size: 30;
+        }
+    </style>
+</head>
+<style>
+    #first {
+        float: left;
+        position: relative;
+        top: 15vh;
+        left: 15vh;
+    }
+
+
+
+    .iconImage:hover {
+        background-color: rgba(0, 97, 243, 0.466);
+    }
+
+    .MenuImage:hover {
+        background-color: rgba(0, 97, 243, 0.466);
+    }
+
+    #icon {
+        float: bottom;
+        position: relative;
+        top: 0;
+        left: 0vh;
+    }
+
+
+
+    img {
+        width: 6.5vw;
+        height: 13vh;
+        padding: 1vw;
+    }
+
+    .iconImage {
+        width: 6.5vw;
+        height: 12.5vh;
+        padding: 1vw;
+        display:none;
+    }
+
+    .MenuImage {
+        width: 6vw;
+        height: 10vh;
+        
+    }
+
+    #second {
+        float: left;
+        position: relative;
+        top: 15vh;
+        left: 30vh;
+    }
+
+    #third {
+        float: left;
+        position: relative;
+        top: 15vh;
+        left: 45vh;
+    }
+</style>
+
+<body>
+
+    <header>
+
+
+        <div><img class="MenuImage" alt="Home"
+                    src="Images\Icons\icons8-list-100.png">
+
+
+        </div>
+
+
+    </header>
+    <section>
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'>
+
+        </script>
+        <nav>
+            <ul>
+
+                <div id="div4" class="img"><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-home-500.png"></a>
+                </div>
+
+
+                <div><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-solar-panel-500.png"></a>
+                </div>
+                <div><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-charged-battery-500.png"></a>
+                </div>
+                <div><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-location-500.png"></a>
+                </div>
+                <div><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
+                </div>
+                <div><a href="https://www.qries.com/"><img class="iconImage" alt="Home"
+                            src="Images\Icons\icons8-lock-500.png"></a>
+                </div>
+
+                <!--  <a class="btn btn-outline-secondary btn-small btn-block" href="/">Home</a><a
+                    class="btn btn-primary btn-small btn-block" href="solarPanels">Solar panels<a
+                        class="buttonSpace btn btn-primary btn-small btn-block" href="solarPanel1">Solar panel 1</a>
+                    <a class="buttonSpace btn btn-primary btn-small btn-block" href="solarPanel2">Solar panel 2</a> <a
+                        class="btn btn-primary btn-small btn-block" href="map">Map</a> <a
+                        class="btn btn-primary btn-small btn-block" href="lock">Lock</a>    -->
+            </ul>
+        </nav>
+
+        
+        <article>
+            <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"> <a href="https://www.qries.com/"><img class="MenuImage" alt="Home"
+                src="Images\Icons\icons8-home-500.png"></a></div>
+
+            <head>
+                <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+
+                <style>
+                    canvas {
+                        -moz-user-select: none;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                    }
+                </style>
+
+            </head>
+
+            <body>
+                <div id="first" style="width: 25%">
+                    <canvas id="chart1-area" , height="33%" , width="33%"></canvas>
+                </div>
+                <div id="second" style="width:25%">
+                    <canvas id="chart2-area" , height="33%" , width="33%"></canvas>
+                </div>
+                <div id="third" style="width: 25%">
+                    <canvas id="chart3-area" , height="33%" , width="33%"></canvas>
+                </div>
+                <script>
+                    var config = function (Title) {
+                        var config = {
+                            type: 'doughnut',
+                            data: {
+                                datasets: [{
+                                    borderColor: 'rgba(227, 244, 255, 0.795)',
+                                    data: [
+                                        60, 40
+                                    ],
+                                    backgroundColor: [
+                                        '#24fc03EA',
+                                        '#ede2ddAA'
+                                    ],
+                                }],
+                                labels: [
+                                    "",
+                                    "",
+                                    ""
+                                ]
+
+                            },
+
+
+                            options: {
+                                cutoutPercentage: 70,
+                                responsive: true,
+                                legend: {
+                                    display: 0,
+                                },
+
+                                title: {
+                                    display: true,
+                                    name: 'test',
+                                    text: Title,
+                                    fontSize: 28,
+                                    padding: 20,
+
+                                },
+                                fontSize: 40,
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true
+                                },
+
+                            }
+
+                        };
+                        return config;
+                    }
+
+                    window.onload = function () {
+                        var ctx = document.getElementById('chart1-area').getContext('2d');
+                        window.myDoughnut = new Chart(ctx, config('Battery charge state'));
+                        var ctx = document.getElementById('chart2-area').getContext('2d');
+                        window.myDoughnut = new Chart(ctx, config('Solar power'));
+                        var ctx = document.getElementById('chart3-area').getContext('2d');
+                        window.myDoughnut = new Chart(ctx, config('Discharge'));
+                    };
+                </script>
+
+
+
+                <body>
+
+                    <body>
+
+
+                        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </body>
+        </article>
+
+
+    </section>
+
+</body>
+
+</html>
