@@ -2,7 +2,7 @@
     "short_name": "Terrasboot",
     "icons": [
         {
-            "src": "Images/Icons/icons8-battery-level-500_ICON.png",
+            "src": "Images/Icons/icons8-boating-500_ICON.png",
             "sizes": "48x48",
             "type": "image/png"
         }
