@@ -12,6 +12,5 @@
     "background_color": "rgba(0, 97, 243, 0.568)",
     "display": "standalone",
     "orientation": "landscape",
-    "scope": "/",
     "theme_color": "rgba(0, 97, 243, 0.568)"
 }
