@@ -4,7 +4,7 @@
 <head>
     <link rel="manifest" href="Manifest\manifest.json">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://raw.githack.com/123sietse321/Terrasboot/master/ChartFiles/papaparse.min.js"></script>
+    <script src="ChartFiles\papaparse.min.js"></script>
 
     <title>Terrasboot</title>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
             background-color: rgba(255, 255, 255, 0.137);
-            background-image: url('https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/blueBackGround_6.jpg');
+            background-image: url('Images/blueBackGround_6.jpg');
 
 
             background-repeat: no-repeat;
@@ -154,22 +154,22 @@
         </script>
         <nav>
             <ul>
-                <div><a href="/index.html"><img class="iconImage" alt="Home" src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-home-500.png"></a>
+                <div><a href="index.html"><img class="iconImage" alt="Home" src="Images\Icons\icons8-home-500.png"></a>
                 </div>
 
-                <div><a href="/SolarPanels.html"><img class="iconImage" alt="Solar"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-solar-panel-500.png"></a>
+                <div><a href="SolarPanels.html"><img class="iconImage" alt="Solar"
+                            src="Images\Icons\icons8-solar-panel-500.png"></a>
                 </div>
-                <div><a href="/Battery.html"><img class="iconImage" alt="Battery"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-charged-battery-500.png"></a>
+                <div><a href="Battery.html"><img class="iconImage" alt="Battery"
+                            src="Images\Icons\icons8-charged-battery-500.png"></a>
                 </div>
-                <div><a href="/Map.html"><img class="iconImage" alt="Map"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-location-500.png"></a>
+                <div><a href="Map.html"><img class="iconImage" alt="Map"
+                            src="Images\Icons\icons8-location-500.png"></a>
                 </div>
-                <div><a href="/Statistics.html"><img class="iconImage" alt="Statistics"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
+                <div><a href="Statistics.html"><img class="iconImage" alt="Statistics"
+                            src="Images\Icons\icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
                 </div>
-                <div><a href=""><img class="iconImage" alt="Lock" src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-lock-500.png"></a>
+                <div><a href=""><img class="iconImage" alt="Lock" src="Images\Icons\icons8-lock-500.png"></a>
                 </div>
 
             </ul>
@@ -180,7 +180,7 @@
 
             <head>
                 <title>Line Styles</title>
-                <script src="https://raw.githack.com/123sietse321/Terrasboot/master/ChartFiles/Chart.min.js"></script>
+                <script src="ChartFiles\Chart.min.js"></script>
 
                 <style>
                     canvas {
@@ -198,7 +198,7 @@
                 <script>
 
 
-                    Papa.parse("/SolarData.csv", {
+                    Papa.parse("SolarData.csv", {
                         worker: false,
                         download: true,
                         delimitersToGuess: [',', '\n', '\t', '|', ';', Papa.RECORD_SEP, Papa.UNIT_SEP],
@@ -217,8 +217,8 @@
                                 return column;
                             }
                             function addArrays(array1, array2) {
-                                var result = [array2.length];
-                                for (var i = 0; i < array1.length ; i++) {
+                                var result = [];
+                                for (var i = 0; i < array1.length; i++) {
                                     result[i] = (parseInt(array1[i]) + parseInt(array2[i]));
                                 }
                                 return result;
@@ -228,8 +228,6 @@
                             var col2 = getCol(data, 1);
                             var col3 = getCol(data, 2);
                             var total = addArrays(col1, col2);
-                            col1.pop();
-                            
                             console.log(col1);
                             var config = {
                                 type: 'line',

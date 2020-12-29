@@ -4,24 +4,11 @@
 <head>
     <link rel="manifest" href="Manifest\manifest.json">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://raw.githack.com/123sietse321/Terrasboot/master/ChartFiles/papaparse.min.js"></script>
+    <script src="ChartFiles\papaparse.min.js"></script>
 
     <title>Terrasboot</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-import React, { memo } from "react";
-import Helmet from "react-helmet";
-
-export const GlobalMetaTags = memo(() => (
-    <Helmet titleAttributes={{ itemprop: "name" }} htmlAttributes={{itemscope: "",itemtype: "http://schema.org/WebPage", }}>
-      <link rel="manifest" href="/manifest.webmanifest.json" />
-      <meta name="theme-color" content="#E53012">
-    </Helmet>
-  ));
-GlobalMetaTags.displayName = "GlobalMetaTags";
-</script>
-
     <style>
         * {
             box-sizing: border-box;
@@ -30,13 +17,20 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
             background-color: rgba(255, 255, 255, 0.137);
-            background-image: url('https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/blueBackGround_6.jpg');
+            background-image: url('Images/blueBackGround_6.jpg');
 
 
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100vw 100vh;
+            
         }
+
+        body img {
+        width: 400px;
+        height: 200px;
+        margin: 0px 0 0 0px;
+    }
 
         header {
             background-color: rgba(0, 97, 243, 0.568);
@@ -95,8 +89,6 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
         left: 15vh;
     }
 
-
-
     .iconImage:hover {
         background-color: rgba(0, 97, 243, 0.466);
     }
@@ -149,16 +141,10 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
 </style>
 
 <body>
-
     <header>
 
         <header>Terrasboot</header>
-
-
-
         </div>
-
-
     </header>
     <section>
         <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
@@ -167,22 +153,22 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
         </script>
         <nav>
             <ul>
-                <div><a href="/index.html"><img class="iconImage" alt="Home" src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-home-500.png"></a>
+                <div><a href="index.html"><img class="iconImage" alt="Home" src="Images\Icons\icons8-home-500.png"></a>
                 </div>
 
-                <div><a href="/SolarPanels.html"><img class="iconImage" alt="Solar"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-solar-panel-500.png"></a>
+                <div><a href="SolarPanels.html"><img class="iconImage" alt="Solar"
+                            src="Images\Icons\icons8-solar-panel-500.png"></a>
                 </div>
-                <div><a href="/Battery.html"><img class="iconImage" alt="Battery"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-charged-battery-500.png"></a>
+                <div><a href="Battery.html"><img class="iconImage" alt="Battery"
+                            src="Images\Icons\icons8-charged-battery-500.png"></a>
                 </div>
-                <div><a href="/Map.html"><img class="iconImage" alt="Map"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-location-500.png"></a>
+                <div><a href="Map.html"><img class="iconImage" alt="Map"
+                            src="Images\Icons\icons8-location-500.png"></a>
                 </div>
-                <div><a href="/Statistics.html"><img class="iconImage" alt="Statistics"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
+                <div><a href="Statistics.html"><img class="iconImage" alt="Statistics"
+                            src="Images\Icons\icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
                 </div>
-                <div><a href=""><img class="iconImage" alt="Lock" src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-lock-500.png"></a>
+                <div><a href=""><img class="iconImage" alt="Lock" src="Images\Icons\icons8-lock-500.png"></a>
                 </div>
 
             </ul>
@@ -214,18 +200,7 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
                 <div id="third" style="width: 25%">
                     <canvas id="chart3-area" , height="33%" , width="33%"></canvas>
                 </div>
-
-
-
-
-                
                 <script>
-
-
-
-
-
-
 
                     Papa.parse("HomeData.csv", {
                         worker: false,
@@ -298,22 +273,7 @@ GlobalMetaTags.displayName = "GlobalMetaTags";
                         }
                     });
                 </script>
-
-
-
-                <body>
-
-                    <body>
-
-
-                        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                    </body>
         </article>
-
-
     </section>
-
 </body>
-
 </html>

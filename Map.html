@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    <script src="https://raw.githack.com/123sietse321/Terrasboot/master/ChartFiles/papaparse.min.js"></script>
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'>
-
-
+        <script src="ChartFiles\papaparse.min.js"></script>
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrMbULw0NSJ49pgC7-M3wwbaUsg8s1e3U&callback=initMap">
+            </script>
+            
     <title>Terrasboot</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +20,7 @@
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
             background-color: rgba(255, 255, 255, 0.137);
-            background-image: url('https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/blueBackGround_6.jpg');
+            background-image: url('Images/blueBackGround_6.jpg');
 
 
             background-repeat: no-repeat;
@@ -149,29 +151,26 @@
         </div>
     </header>
     <section>
-
+       
         </script>
         <nav>
             <ul>
-                <div><a href="/index.html"><img class="iconImage" alt="Home"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-home-500.png"></a>
+                <div><a href="index.html"><img class="iconImage" alt="Home" src="Images\Icons\icons8-home-500.png"></a>
                 </div>
 
-                <div><a href="/SolarPanels.html"><img class="iconImage" alt="Solar"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-solar-panel-500.png"></a>
+                <div><a href="SolarPanels.html"><img class="iconImage" alt="Solar"
+                            src="Images\Icons\icons8-solar-panel-500.png"></a>
                 </div>
-                <div><a href="/Battery.html"><img class="iconImage" alt="Battery"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-charged-battery-500.png"></a>
+                <div><a href="Battery.html"><img class="iconImage" alt="Battery"
+                            src="Images\Icons\icons8-charged-battery-500.png"></a>
                 </div>
-                <div><a href="/Map.html"><img class="iconImage" alt="Map"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-location-500.png"></a>
+                <div><a href="Map.html"><img class="iconImage" alt="Map"
+                            src="Images\Icons\icons8-location-500.png"></a>
                 </div>
-                <div><a href="/Statistics.html"><img class="iconImage" alt="Statistics"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-financial-dynamic-presentation-500.png"
-                            width='50' height='50'></a>
+                <div><a href="Statistics.html"><img class="iconImage" alt="Statistics"
+                            src="Images\Icons\icons8-financial-dynamic-presentation-500.png" width='50' height='50'></a>
                 </div>
-                <div><a href=""><img class="iconImage" alt="Lock"
-                            src="https://raw.githubusercontent.com/123sietse321/Terrasboot/master/Images/Icons/icons8-lock-500.png"></a>
+                <div><a href=""><img class="iconImage" alt="Lock" src="Images\Icons\icons8-lock-500.png"></a>
                 </div>
 
             </ul>
@@ -183,58 +182,64 @@
 
             <head>
                 <title>Line Styles</title>
-
+                
 
 
             </head>
 
             <body>
-
-                <script type="text/javascript"
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrMbULw0NSJ49pgC7-M3wwbaUsg8s1e3U&callback=initMap"></script>
                 <script>
-
-                    var flightPlanCoordinates = [];
+                    var data;
                     Papa.parse("MapData.csv", {
                         worker: false,
                         download: true,
                         delimitersToGuess: [',', '\n', '\t', '|', ';', Papa.RECORD_SEP, Papa.UNIT_SEP],
                         header: false,
                         complete: function (results) {
+
                             data = results.data;
-                            for (var i = 0; i < data.length -1; i++) {
-                                flightPlanCoordinates[i] = new google.maps.LatLng(data[i][0], data[i][1]);
-                            }
-                            console.log(flightPlanCoordinates);
-
-                            var prop = {
-                                center: new google.maps.LatLng(52.1581, 4.493479),
-                                zoom: 14,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            };
-
-                            var marker = new google.maps.Marker({
-                                position: flightPlanCoordinates[flightPlanCoordinates.length - 1],
-                                title: "Hello World!",
-                                animation: google.maps.Animation.DROP
-                            });
 
 
-
-                            var flightPath = new google.maps.Polyline({
-                                path: flightPlanCoordinates,
-                                geodesic: true,
-                                strokeColor: '#FF0000',
-                                strokeOpacity: 0.6,
-                                strokeWeight: 2
-                            });
-
-                            var map = new google.maps.Map(document.getElementById("map"), prop);
-                            marker.setMap(map);
-                            flightPath.setMap(map);
                         }
                     });
+
+                    function initMap() {                
+                        var flightPlanCoordinates = [];
+                        for (var i = 0; i < data.length; i++) {
+                            flightPlanCoordinates[i] = new google.maps.LatLng(data[i][0], data[i][1]);
+                        }
+
+                        
+                        var marker = new google.maps.Marker({
+                            position: flightPlanCoordinates[flightPlanCoordinates.length-1],
+                            title: "Hello World!",
+                            animation: google.maps.Animation.DROP
+                        });
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 14,
+                            center: { lat: 52.1581, lng: 4.493479 },
+                            mapTypeId: 'terrain'
+                        });
+
+                        console.log(flightPlanCoordinates)
+                        var flightPath = new google.maps.Polyline({
+                            path: flightPlanCoordinates,
+                            geodesic: true,
+                            strokeColor: '#FF0000',
+                            strokeOpacity: 0.6,
+                            strokeWeight: 2
+                        });
+
+                        marker.setMap(map);
+
+                        flightPath.setMap(map);
+                    };
+
                 </script>
+
+                
+                
             </body>
         </article>
 
